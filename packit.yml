@@ -1,0 +1,25 @@
+upstream_package_name: libunicode
+upstream_project_url: https://github.com/contour-terminal/libunicode
+
+downstream_package_name: libunicode
+
+specfile_path: libunicode.spec
+
+jobs:
+  - job: pull_from_upstream
+    trigger: release
+    dist_git_branches:
+      - rawhide
+      - epel-9
+
+  - job: koji_build
+    trigger: commit
+    dist_git_branches:
+      - rawhide
+      - epel-9
+
+  - job: bodhi_update
+    trigger: commit
+    dist_git_branches:
+      - rawhide
+      - epel-9
