@@ -1,13 +1,13 @@
 Name:           libunicode
 Version:        0.4.0
-Release:        %autorelease
+Release:        %autorelease -e rv64
 Summary:        Modern C++20 Unicode Library
 License:        Apache-2.0
 URL:            https://github.com/contour-terminal/libunicode
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 Patch0:         libunicode-fix-catch-in-cmake.patch
 
-ExclusiveArch:  x86_64 aarch64
+ExclusiveArch:  x86_64 aarch64 riscv64
 
 BuildRequires:  gcc-c++
 BuildRequires:  cmake
